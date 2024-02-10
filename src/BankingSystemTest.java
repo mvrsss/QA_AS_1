@@ -50,7 +50,6 @@ class BankingSystemTest {
         }
     }
 
-    //didnt get what this test checks
     @ParameterizedTest
     @CsvSource({"200,800", "500,500", "1500, 'Insufficient funds'"})
     void testDebitOperation(int debitAmount, String expected) {

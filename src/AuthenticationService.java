@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-// AuthenticationService class
 class AuthenticationService {
     private Map<String, String> credentials; // Map to store username-password pairs
 

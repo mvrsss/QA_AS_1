@@ -1,9 +1,7 @@
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
-// Bank class
 public class Bank {
     private String name;
 
@@ -29,14 +27,13 @@ public class Bank {
 
     // Method to remove account
     public boolean removeAccount(String accountNumber) {
-        // Assume removal logic
+        accounts.remove(accountNumber);
         return true;
     }
 
     // Method to get account by number
-    public Optional<Account> getAccount(String accountNumber) {
-        // Assume retrieval logic
-        return Optional.empty();
+    public Account getAccount(String accountNumber) {
+        return accounts.get(accountNumber);
     }
 
     // Method to close account
@@ -97,13 +94,11 @@ public class Bank {
 
     // Method to get account balance
     public int getAccountBalance(String accountNumber) {
-        // Assume balance retrieval logic
         return accounts.get(accountNumber).getBalance();
     }
 
     // Method to create savings account
     public Account createSavingsAccount(String clientId, int interestRate) {
-        // Assume creation logic
         // Create a new savings account
         Account account = new Account(clientId, 0, Account.Type.SAVINGS);
         account.setInterestRate(interestRate); // Set the interest rate for the account

@@ -87,7 +87,7 @@ class BankingSystemTest {
         Client client = bank.createClient("Jane", "Doe", "janedoe", LocalDateTime.now(), "456 Elm St");
         Account account = bank.createAccount(client.getId(), 0, Account.Type.CHECKING);
         assertTrue(bank.removeAccount(account.getClientId()));
-        assertFalse(bank.getAccount(account.getClientId()).isPresent());
+        assertNull(bank.getAccount(account.getClientId()));
     }
 
     @ParameterizedTest

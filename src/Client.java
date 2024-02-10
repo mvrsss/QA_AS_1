@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-// Client class
 public class Client {
     private String name;
     private String surname;
@@ -15,7 +15,6 @@ public class Client {
         this.username = username;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        // Assume generation of ID
         this.id = generateId();
     }
 
@@ -48,9 +47,8 @@ public class Client {
         this.address = newAddress;
     }
 
-    // Assume ID generation logic
     private String generateId() {
-        return "GeneratedID";
+        return UUID.randomUUID().toString();
     }
 }
 

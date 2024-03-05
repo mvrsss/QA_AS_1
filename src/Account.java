@@ -63,6 +63,48 @@ public class Account {
         }
     }
 
+    public void debitMutant1(int amount) {
+        if (balance < amount) { // Changed >= to <
+            balance -= amount;
+        } if (overdraftLimit >= (amount - balance)) { // removed else if
+            balance = - (amount - balance);
+        } else {
+            throw new IllegalArgumentException("Insufficient funds and overdraft limit reached");
+        }
+    }
+
+    public void debitMutant2(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } if (overdraftLimit < (amount - balance)) { // Changed >= to >
+            balance = - (amount - balance);
+        } else {
+            throw new IllegalArgumentException("Insufficient funds and overdraft limit reached");
+        }
+    }
+
+    public void debitMutant3(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } if (overdraftLimit >= (amount - balance)) {
+            balance = amount - balance; // Removed the negative sign
+        } else {
+            throw new IllegalArgumentException("Insufficient funds and overdraft limit reached");
+        }
+    }
+
+    public void debitMutant4(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } if (overdraftLimit >= (amount - balance)) {
+            balance = - (amount - balance);
+        } else {
+            // Removed the throw statement
+            // throw new IllegalArgumentException("Insufficient funds and overdraft limit reached");
+        }
+    }
+
+
     // Method to apply interest
     public void applyInterest(double rate) {
         int interest = (int)(balance * (rate / 100));

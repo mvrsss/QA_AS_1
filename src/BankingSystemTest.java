@@ -157,6 +157,36 @@ class BankingSystemTest {
     }
 
     @Test
+    void testDebitWithOverdraftMutant1() {
+        Account account = new Account("333444", 100, Account.Type.CHECKING);
+        account.enableOverdraftProtection(200); // Enable overdraft up to 200
+        account.debitMutant1(250); // Attempt to debit more than balance but within overdraft limit
+        assertEquals(-150, account.getBalance()); // Overdraft allows balance to go negative
+    }
+
+    @Test
+    void testDebitWithOverdraftMutant2() {
+        Account account = new Account("333444", 100, Account.Type.CHECKING);
+        account.enableOverdraftProtection(200); // Enable overdraft up to 200
+        account.debitMutant2(250); // Attempt to debit more than balance but within overdraft limit
+        assertEquals(-150, account.getBalance()); // Overdraft allows balance to go negative
+    }
+
+    @Test
+    void testDebitWithOverdraftMutant3() {
+        Account account = new Account("333444", 100, Account.Type.CHECKING);
+        account.enableOverdraftProtection(200); // Enable overdraft up to 200
+        account.debitMutant3(250); // Attempt to debit more than balance but within overdraft limit
+        assertEquals(-150, account.getBalance()); // Overdraft allows balance to go negative
+    }
+    @Test
+    void testDebitWithOverdraftMutant4() {
+        Account account = new Account("333444", 100, Account.Type.CHECKING);
+        account.enableOverdraftProtection(50); // Enable overdraft up to 200
+        account.debitMutant4(250); // Attempt to debit more than balance but within overdraft limit
+        assertThrows(IllegalArgumentException.class, () -> account.debitMutant4(250));
+    }
+    @Test
     void testCloseAccountWithZeroBalance() {
         Bank bank = new Bank("Test bank");
         Client client = bank.createClient("Lily", "Evans", "lilyevans", LocalDateTime.of(1990, Month.MAY, 15, 0, 0), "789 Birch St");
@@ -192,7 +222,7 @@ class BankingSystemTest {
 
         assertEquals(initialBalance + numberOfThreads * amountPerThread, account.getBalance());
     }
-
+    
     @Test
     void testClosingAccountWithPositiveBalance() {
         Bank bank = new Bank("Test Bank");
@@ -232,55 +262,5 @@ class BankingSystemTest {
         authService.register(client.getUsername(), "securePass456"); // Assuming a registration step exists
         assertFalse(authService.login(client.getUsername(), "wrongPassword"));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

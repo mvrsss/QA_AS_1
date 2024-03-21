@@ -1,3 +1,4 @@
+package main.java.com.qa.as1;
 public class Savings {
     private Account account;
     private double interestRate;

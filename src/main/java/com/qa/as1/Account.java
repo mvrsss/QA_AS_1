@@ -1,4 +1,4 @@
-
+package main.java.com.qa.as1;
 public class Account {
     private String clientId;
     private int balance;

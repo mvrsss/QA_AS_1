@@ -1,7 +1,9 @@
+package main.java.com.qa.as1;
+
 import java.util.HashMap;
 import java.util.Map;
 
-class AuthenticationService {
+public class AuthenticationService {
     private Map<String, String> credentials; // Map to store username-password pairs
 
     public AuthenticationService() {

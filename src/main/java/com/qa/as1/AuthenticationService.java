@@ -1,4 +1,4 @@
-package main.java.com.qa.as1;
+package com.qa.as1;
 
 import java.util.HashMap;
 import java.util.Map;

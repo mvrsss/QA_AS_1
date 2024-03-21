@@ -1,8 +1,11 @@
-package main.java.com.qa.as1;
+package com.qa.as1;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 import java.time.LocalDateTime;
+
 
 public class BankIntegrationTest {
 

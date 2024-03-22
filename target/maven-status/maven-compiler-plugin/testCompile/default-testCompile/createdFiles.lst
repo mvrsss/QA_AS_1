@@ -1,3 +1,7 @@
+com/qa/as1/AccountCreationIntegrationTest.class
 com/qa/as1/AuthenticationServiceTest.class
-com/qa/as1/SavingsInterestApplicationTest.class
+com/qa/as1/ClientLoginIntegrationTest.class
 com/qa/as1/BankIntegrationTest.class
+com/qa/as1/WithdrawalInsufficientFundsIntegrationTest.class
+com/qa/as1/DepositIntegrationTest.class
+com/qa/as1/SavingsInterestApplicationTest.class

@@ -1,3 +1,7 @@
+/workspaces/QA_AS_1/src/test/java/com/qa/as1/AccountCreationIntegrationTest.java
 /workspaces/QA_AS_1/src/test/java/com/qa/as1/BankIntegrationTest.java
+/workspaces/QA_AS_1/src/test/java/com/qa/as1/ClientLoginIntegrationTest.java
+/workspaces/QA_AS_1/src/test/java/com/qa/as1/DepositIntegrationTest.java
 /workspaces/QA_AS_1/src/test/java/com/qa/as1/AuthenticationServiceTest.java
+/workspaces/QA_AS_1/src/test/java/com/qa/as1/WithdrawalInsufficientFundsIntegrationTest.java
 /workspaces/QA_AS_1/src/test/java/com/qa/as1/SavingsInterestApplicationTest.java
